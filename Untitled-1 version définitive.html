@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Glossaire Cyber</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      background: 
+        linear-gradient(120deg, #6BC4D0 0%, #e0f7fa 100%),
+        url('https://www.transparenttextures.com/patterns/cubes.png'),
+        url('https://pngimg.com/uploads/cyber_security/cyber_security_PNG17.png');
+      background-repeat: no-repeat, repeat, no-repeat;
+      background-position: center center, left top, center center;
+      background-size: cover, auto, 400px;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 30px;
+    }
+    .glossaire-container {
+      width: 100%;
+      max-width: 800px;
+      background: #fff;
+      border-radius: 18px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      padding: 32px 24px 24px 24px;
+      margin-top: 20px;
+    }
+    .illustration {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+    .illustration img {
+      width: 70px;
+      height: 70px;
+      opacity: 0.85;
+      filter: drop-shadow(0 2px 8px rgba(107,196,208,0.13));
+    }
+    h2 {
+      text-align: center;
+      color: #05534c;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 2.2em;
+      margin-bottom: 18px;
+    }
+    .search-bar {
+      width: 100%;
+      max-width: 400px;
+      display: block;
+      margin: 0 auto 16px auto;
+      padding: 12px 16px;
+      font-size: 1.1em;
+      border: 1.5px solid #6BC4D0;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(107,196,208,0.08);
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .search-bar:focus {
+      border-color: #05534c;
+    }
+    #closeAll {
+      margin-bottom: 16px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      background: #6BC4D0;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 24px;
+      font-size: 1em;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(107,196,208,0.08);
+      transition: background 0.2s;
+    }
+    #closeAll:hover {
+      background: #05534c;
+    }
+    .accordion {
+      background-color: #ebebe7;
+      color: #05534c;
+      cursor: pointer;
+      padding: 14px 18px;
+      width: 100%;
+      margin: 10px 0;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 1.08em;
+      font-weight: 500;
+      transition: background 0.3s, box-shadow 0.3s;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(107,196,208,0.07);
+    }
+    .accordion:hover,
+    .active {
+      background-color: #d6f3f7;
+      box-shadow: 0 4px 12px rgba(107,196,208,0.13);
+    }
+    .panel {
+      padding: 0 18px;
+      max-height: 0;
+      overflow: hidden;
+      background-color: #f8fcfc;
+      border-radius: 0 0 8px 8px;
+      margin-bottom: 10px;
+      box-shadow: 0 2px 8px rgba(107,196,208,0.08);
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s;
+    }
+    .panel.open {
+      padding: 14px 18px;
+      max-height: 500px;
+    }
+    mark {
+      background: #ffe082;
+      color: #05534c;
+      border-radius: 4px;
+      padding: 0 2px;
+    }
+    @media (max-width: 600px) {
+      .glossaire-container {
+        padding: 12px 4px;
+      }
+      .search-bar {
+        max-width: 98vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="glossaire-container">
+    <div class="illustration">
+      <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="Cyber illustration">
+    </div>
+    <h2>CyberDico</h2>
+    <input type="text" class="search-bar" id="searchInput" placeholder="Rechercher un terme...">
+    <button id="closeAll">Tout fermer</button>
+    <div id="glossaire-list">
+      <button class="accordion">Authentification</button>
+      <div class="panel">
+        <p>Processus permettant de vérifier l'identité d'un utilisateur ou d'un système.</p>
+      </div>
+      <button class="accordion">Botnet</button>
+      <div class="panel">
+        <p>Réseau de machines compromises contrôlées à distance pour mener des attaques.</p>
+      </div>
+      <button class="accordion">Bug (bogue)</button>
+      <div class="panel">
+        <p>Défaut, anomalie ou comportement inattendu dans un logiciel ou un système informatique qui empêche une fonctionnalité de fonctionner conformément aux spécifications. Les bugs peuvent résulter d'erreurs de conception, d'implémentation ou d'intégration ; leur gestion implique typiquement la reproduction du phénomène, la rédaction d'un rapport d'incident (bug report), l'attribution d'une priorité, la correction par patch et la validation par tests (unitaires, d'intégration, et acceptation).</p>
+      </div>
+      <button class="accordion">Cheval de Troie</button>
+      <div class="panel">
+        <p>Programme malveillant qui se présente comme un logiciel légitime ou inoffensif afin de tromper l’utilisateur et l’inciter à l’installer. Une fois activé, il permet généralement à un attaquant d’accéder au système, de voler des informations sensibles, d’installer d’autres malwares ou de prendre le contrôle à distance. Contrairement aux virus, les chevaux de Troie ne se répliquent pas par eux-mêmes, mais exploitent la confiance ou l’inattention de l’utilisateur.</p>
+      </div>
+      <button class="accordion">Chiffrement</button>
+      <div class="panel">
+        <p>Technique de transformation des données pour les rendre illisibles sans clé de déchiffrement.</p>
+      </div>
+      <button class="accordion">Cloud Computing</button>
+      <div class="panel">
+        <p>Modèle d'accès à des ressources informatiques (serveurs, stockage, logiciels) via Internet.</p>
+      </div>
+      <button class="accordion">Collaboration en temps réel</button>
+      <div class="panel">
+        <p>Possibilité de travailler à plusieurs sur un même document ou projet en ligne simultanément.</p>
+      </div>
+      <button class="accordion">Confidentialité</button>
+      <div class="panel">
+        <p>Principe fondamental de la cybersécurité visant à garantir que les informations ne sont accessibles qu’aux personnes autorisées. La confidentialité repose sur des mécanismes tels que le chiffrement, la gestion des identités et des droits d’accès, ainsi que des politiques organisationnelles de protection des données. Elle est au cœur du RGPD et d’autres réglementations sur les données personnelles.</p>
+      </div>
+      <button class="accordion">Cookies</button>
+      <div class="panel">
+        <p>Petits fichiers stockés par un site web dans le navigateur d’un utilisateur afin de conserver des informations liées à sa navigation (préférences, session, suivi publicitaire, etc.). Les cookies peuvent améliorer l’expérience utilisateur mais soulèvent des enjeux de protection de la vie privée. La législation européenne impose leur information et, dans de nombreux cas, le consentement explicite de l’utilisateur.</p>
+      </div>
+      <button class="accordion">Cyberattaque</button>
+      <div class="panel">
+        <p>Action malveillante menée par un individu, un groupe ou un État contre un système informatique, un réseau ou des données, dans le but de perturber, dégrader, voler ou détruire des informations. Les cyberattaques peuvent inclure des ransomwares, virus, chevaux de Troie, attaques DDoS, phishing, intrusions réseau ou espionnage numérique. La prévention repose sur la cybersécurité, la sensibilisation des utilisateurs, les correctifs logiciels et la surveillance continue des systèmes.</p>
+      </div>
+      <button class="accordion">Darknet</button>
+      <div class="panel">
+        <p>Partie d’Internet non indexée par les moteurs de recherche classiques, accessible uniquement via des logiciels spécifiques (ex : Tor). Le darknet est utilisé à la fois pour protéger l’anonymat et la vie privée des utilisateurs, et malheureusement pour des activités illégales telles que le commerce de données volées, la vente de drogues ou d’armes, et la diffusion de contenus prohibés. Il est distinct du deep web, qui désigne toutes les pages non indexées mais pas nécessairement anonymes.</p>
+      </div>
+      <button class="accordion">DDoS (Distributed Denial of Service)</button>
+      <div class="panel">
+        <p>Attaque visant à saturer un service ou un site web par un flot massif de requêtes.</p>
+      </div>
+      <button class="accordion">E-mail</button>
+      <div class="panel">
+        <p>Service de messagerie électronique permettant d’envoyer et de recevoir des messages via Internet.</p>
+      </div>
+      <button class="accordion">Firewall (Pare-feu)</button>
+      <div class="panel">
+        <p>Système de sécurité permettant de contrôler le trafic entrant et sortant d'un réseau.</p>
+      </div>
+      <button class="accordion">Hameçonnage (Phishing)</button>
+      <div class="panel">
+        <p>Méthode frauduleuse consistant à tromper un utilisateur pour obtenir ses données personnelles.</p>
+      </div>
+      <button class="accordion">Hacktiviste</button>
+      <div class="panel">
+        <p>Individu ou groupe utilisant des compétences informatiques pour mener des actions politiques, idéologiques ou sociales sur Internet. Les hacktivistes peuvent réaliser des intrusions, des défigurations de sites web, des campagnes de déni de service ou la diffusion de documents confidentiels dans le but de sensibiliser l’opinion publique ou de dénoncer certaines pratiques. Leur activité se situe à l’intersection de la cybersécurité et de l’activisme numérique.</p>
+      </div>
+      <button class="accordion">Messagerie instantanée</button>
+      <div class="panel">
+        <p>Application permettant d'échanger des messages en temps réel (ex : WhatsApp, Teams, Slack).</p>
+      </div>
+      <button class="accordion">Malware</button>
+      <div class="panel">
+        <p>Logiciel malveillant conçu pour nuire à un système informatique ou voler des données.</p>
+      </div>
+      <button class="accordion">Mot de passe</button>
+      <div class="panel">
+        <p>Suite de caractères utilisée pour authentifier un utilisateur et protéger l’accès à un compte ou un système informatique. Un mot de passe doit être complexe, unique et régulièrement renouvelé afin de limiter les risques d’intrusion ou de compromission des données. Il peut être combiné avec d’autres méthodes d’authentification dans le cadre d’une approche multi-facteurs (MFA).</p>
+      </div>
+      <button class="accordion">Notification</button>
+      <div class="panel">
+        <p>Alerte envoyée par une application pour signaler un message, une réunion ou une mise à jour.</p>
+      </div>
+      <button class="accordion">Partage d'écran</button>
+      <div class="panel">
+        <p>Fonction permettant à un utilisateur de montrer son écran à d'autres participants lors d'une réunion en ligne.</p>
+      </div>
+      <button class="accordion">Partage de fichiers</button>
+      <div class="panel">
+        <p>Action de rendre un document ou un dossier accessible à d'autres utilisateurs via un service en ligne.</p>
+      </div>
+      <button class="accordion">Ransomware (rançongiciel)</button>
+      <div class="panel">
+        <p>Logiciel malveillant qui chiffre les données d’un système ou en empêche l’accès, puis exige le paiement d’une rançon pour fournir la clé de déchiffrement ou restaurer l’accès. Les ransomwares visent autant les particuliers que les organisations ; la réponse opérationnelle combine isolement du système, analyse forensique, restauration à partir de sauvegardes fiables et, le cas échéant, notification aux autorités compétentes.</p>
+      </div>
+      <button class="accordion">RGPD (Règlement Général sur la Protection des Données)</button>
+      <div class="panel">
+        <p>Cadre légal européen entré en vigueur en mai 2018, visant à renforcer la protection des données personnelles des citoyens de l’Union européenne. Le RGPD encadre la collecte, le traitement, le stockage et le partage des informations personnelles, impose des obligations de transparence, de consentement, de sécurité et de notification en cas de violation de données, et prévoit des sanctions en cas de non-conformité.</p>
+      </div>
+      <button class="accordion">Spam</button>
+      <div class="panel">
+        <p>Message électronique non sollicité, souvent à but publicitaire ou frauduleux, envoyé massivement.</p>
+      </div>
+      <button class="accordion">Spyware (logiciel espion)</button>
+      <div class="panel">
+        <p>Logiciel malveillant conçu pour collecter secrètement des informations sur un utilisateur ou un système informatique, souvent à des fins publicitaires, de surveillance ou de vol de données personnelles. Les spywares peuvent enregistrer les frappes clavier, surveiller la navigation, récupérer des identifiants et transmettre ces informations à des tiers sans le consentement de la victime.</p>
+      </div>
+      <button class="accordion">SSI (Sécurité des Systèmes d'Information)</button>
+      <div class="panel">
+        <p>Ensemble des mesures techniques, organisationnelles et humaines mises en place pour protéger les systèmes d'information contre les intrusions, les pertes de données, les attaques et tout incident compromettant la disponibilité, l’intégrité et la confidentialité des informations. La SSI inclut la gestion des accès, la cybersécurité, la formation des utilisateurs et la conformité aux normes et réglementations (ex : ISO 27001, RGPD).</p>
+      </div>
+      <button class="accordion">Ver (informatique)</button>
+      <div class="panel">
+        <p>Programme malveillant capable de se répliquer et de se propager automatiquement d’un système à un autre, souvent via un réseau ou des périphériques amovibles. Contrairement aux virus, les vers n’ont pas besoin d’un fichier hôte pour se propager. Ils peuvent provoquer des ralentissements, saturer les réseaux, voler ou corrompre des données et, dans certains cas, faciliter l’intrusion d’autres malwares.</p>
+      </div>
+      <button class="accordion">Visioconférence</button>
+      <div class="panel">
+        <p>Réunion organisée via un outil numérique permettant de voir et d'entendre les participants à distance.</p>
+      </div>
+      <button class="accordion">VPN (Virtual Private Network)</button>
+      <div class="panel">
+        <p>Réseau privé virtuel permettant de sécuriser les communications sur Internet.</p>
+      </div>
+      <button class="accordion">Webcam</button>
+      <div class="panel">
+        <p>Caméra numérique connectée à un ordinateur ou à un réseau permettant de capturer des images ou des vidéos en temps réel. Les webcams sont couramment utilisées pour la visioconférence, le streaming ou la surveillance. Elles peuvent représenter un risque pour la vie privée si elles sont piratées ou utilisées sans consentement.</p>
+      </div>
+      <button class="accordion">Webinaire</button>
+      <div class="panel">
+        <p>Conférence en ligne permettant à un animateur de présenter du contenu à un large public connecté.</p>
+      </div>
+      <button class="accordion">Zero-Day</button>
+      <div class="panel">
+        <p>Vulnérabilité inconnue des éditeurs de logiciels et exploitable par des attaquants.</p>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Accordéon animé
+    var acc = document.getElementsByClassName("accordion");
+    for (var i = 0; i < acc.length; i++) {
+      acc[i].addEventListener("click", function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        panel.classList.toggle("open");
+      });
+    }
+    // Bouton "Tout fermer"
+    document.getElementById('closeAll').onclick = function() {
+      for (var i = 0; i < acc.length; i++) {
+        acc[i].classList.remove('active');
+        acc[i].nextElementSibling.classList.remove('open');
+      }
+    };
+    // Barre de recherche améliorée avec surbrillance et animation
+    document.getElementById('searchInput').addEventListener('input', function() {
+      var filter = this.value.toLowerCase();
+      var glossaireList = document.getElementById('glossaire-list');
+      var accs = glossaireList.getElementsByClassName('accordion');
+      for (var i = 0; i < accs.length; i++) {
+        var txt = accs[i].textContent || accs[i].innerText;
+        var panel = accs[i].nextElementSibling;
+        // Surbrillance du mot recherché
+        if (filter !== '') {
+          var regex = new RegExp('(' + filter.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
+          accs[i].innerHTML = txt.replace(regex, '<mark>$1</mark>');
+        } else {
+          accs[i].innerHTML = txt;
+        }
+        if (txt.toLowerCase().indexOf(filter) > -1) {
+          accs[i].style.display = '';
+          // Si la recherche est vide, referme tous les panneaux
+          if (filter === '') {
+            accs[i].classList.remove('active');
+            panel.classList.remove('open');
+          } else {
+            panel.classList.toggle('open', accs[i].classList.contains('active'));
+          }
+        } else {
+          accs[i].style.display = 'none';
+          panel.classList.remove('open');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
